@@ -39,14 +39,15 @@
         const currentDay = new Date();
         const dayOfTheWeek = daysOfTheWeek[currentDay.getDay()];
         document.querySelector('[data-testid = "currentDayOfTheWeek"]').textContent = dayOfTheWeek;
-        function getCurrentWATTime(){
-            const utcTime = new Date();
-            const watTime = new Date(utcTime.getTime() );
-            return watTime.toLocaleTimeString("en-Us", {
-                timeZoneName: "short", timeZone: "Africa/Lagos"
-            });
+        function getCurrentWATTimeInMillis() {
+            const offsetHours = 1; 
+            const watTimeInMillis = new Date().getTime() + (offsetHours * 60 * 60 * 1000);
+            return watTimeInMillis;
         }
-        document.querySelector('[data-testid="currentWATTime"]').textContent = getCurrentWATTime();        
+
+        
+        const currentWATTimeInMillis = getCurrentWATTimeInMillis();
+        document.querySelector('[data-testid="currentWATTime"]').textContent = currentWATTimeInMillis;
     </script>
 </body>
 </html>
