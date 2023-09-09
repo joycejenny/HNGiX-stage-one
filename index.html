@@ -43,9 +43,7 @@
             const offsetHours = 1; 
             const watTimeInMillis = new Date().getTime() + (offsetHours * 60 * 60 * 1000);
             return watTimeInMillis;
-        }
-
-        
+        }        
         const currentWATTimeInMillis = getCurrentWATTimeInMillis();
         document.querySelector('[data-testid="currentWATTime"]').textContent = currentWATTimeInMillis;
     </script>
